@@ -1,9 +1,11 @@
 public class Vertex {
 
     public GeoPoint point;
+    public int value;
     
     public Vertex(GeoPoint p) {
 	point = p;
+	value = 0;
     }
     
     public Vertex(int la, int lo) {
@@ -16,6 +18,11 @@ public class Vertex {
 	    return ((GeoPoint)a).equals(this.point);
 	}
 	return false;
+    }
+
+    @Override 
+    public String toString() {
+	return "" + value + ": " + point.lati + ", " + point.longi;
     }
     
     

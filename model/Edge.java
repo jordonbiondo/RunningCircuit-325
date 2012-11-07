@@ -20,6 +20,11 @@ public class Edge {
 	return vertex1;
     }
     
+    @Override 
+    public String toString() {
+	return vertex1.toString() + " : " + vertex2.toString(); 
+    }
+    
     
 }
 
