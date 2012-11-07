@@ -12,6 +12,10 @@ public class Vertex {
 	point = new GeoPoint(la, lo);
     }
 
+	public setValue(int vals){
+		value=vals;
+	}
+
     @Override
     public boolean equals(Object a) {
 	if (a instanceof Vertex) {
