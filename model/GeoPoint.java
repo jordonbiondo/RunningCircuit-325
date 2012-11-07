@@ -1,12 +1,12 @@
 public class GeoPoint {
     /** Lattitude */
-    public float lati;
+    public int lati;
     
     /** Longitude */
-    public float longi;
+    public int longi;
 
     /** New GeoPoint given a lat and long */
-    public GeoPoint(float la, float lo) {
+    public GeoPoint(int la, int lo) {
 	lati = la;
 	longi = lo;
     }

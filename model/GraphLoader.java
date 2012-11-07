@@ -18,7 +18,11 @@ public class GraphLoader{
 	Graph graph = new Graph();
 	try {
 	    while (scanner.hasNextLine()) {
-		graph.addEdge(loadEdgeLine(scanner.nextLine()));
+		String nextL = scanner.nextLine();
+		// can comment lines in graph files with a #
+		if (nextL.charAt(0) != '#') {
+		    graph.addEdge(loadEdgeLine(nextL));
+		}
 	    }
 	} catch (Exception e) {
 	    e.printStackTrace();

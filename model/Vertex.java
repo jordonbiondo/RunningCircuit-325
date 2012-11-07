@@ -6,7 +6,7 @@ public class Vertex {
 	point = p;
     }
     
-    public Vertex(float la, float lo) {
+    public Vertex(int la, int lo) {
 	point = new GeoPoint(la, lo);
     }
 
