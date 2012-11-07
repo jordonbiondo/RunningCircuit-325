@@ -2,6 +2,7 @@ public class Vertex {
 
     public GeoPoint point;
     public int value;
+	public boolean scanned;
     
     public Vertex(GeoPoint p) {
 	point = p;
@@ -23,6 +24,13 @@ public class Vertex {
 	}
 	return false;
     }
+	public isScanned(){
+		scanned=true;
+	}
+	
+	public resetScanned(){
+		scanned=false;
+	}
 
     @Override 
     public String toString() {
