@@ -1,22 +1,24 @@
+package model;
+
 public class GeoPoint {
-    /** Lattitude */
-    public int lati;
-    
-    /** Longitude */
-    public int longi;
+	/** Lattitude */
+	public int lati;
 
-    /** New GeoPoint given a lat and long */
-    public GeoPoint(int la, int lo) {
-	lati = la;
-	longi = lo;
-    }
+	/** Longitude */
+	public int longi;
 
-    @Override
-    public boolean equals(Object a) {
-	if (a instanceof GeoPoint) {
-	    return (lati == ((GeoPoint)a).lati && longi == ((GeoPoint)a).longi);
+	/** New GeoPoint given a lat and long */
+	public GeoPoint(int la, int lo) {
+		lati = la;
+		longi = lo;
 	}
-	return false;
-    }
+
+	@Override
+	public boolean equals(Object a) {
+		if (a instanceof GeoPoint) {
+			return (lati == ((GeoPoint) a).lati && longi == ((GeoPoint) a).longi);
+		}
+		return false;
+	}
 
 }
