@@ -31,6 +31,9 @@ public class GraphLoader{
 	return graph;
     }
     
+    /**
+     * Grabs shit and does 
+     */
     public static Edge loadEdgeLine(String edgeLine){
 	String[] con = edgeLine.split("/");
         String[] vertex1 = con[0].split(",");
