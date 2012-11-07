@@ -33,7 +33,8 @@ public class ShortestPath{
 	public scan(Vertex a, Vertex b){
 		getAdjacent(at);
 		for(int i=0;i<adjacentEdge.size();i++){
-			adjacentEdge.get(i).getVertex2().setValue(adjacentEdge.get(i).getVertex2().getvalue() + adjacentEdge.get(i).getWeight());
+			if(adjacentEdge.get(i).getVertex2().getvalue()<(adjacentEdge.get(i).getVertex2().getvalue() + adjacentEdge.get(i).getWeight()))
+				adjacentEdge.get(i).getVertex2().setValue(adjacentEdge.get(i).getVertex2().getvalue() + adjacentEdge.get(i).getWeight());
 		}
 		/*
 		*scan for smallest value
