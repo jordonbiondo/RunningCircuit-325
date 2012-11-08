@@ -25,9 +25,15 @@ public class Graph {
 	}
 
 	public boolean addConnection(Vertex v1, Vertex v2) {
-		addVertex(v1);
-		addVertex(v2);
-		// true if connection was not made already
-		return (v1.connect(v2) && v2.connect(v1));
+	    Vertex vA = v1;
+	    Vertex vB = v2;
+	    if (!addVertex(v1)) {
+		vA = vertices.get(vertices.indexOf(v1));
+	    }
+	    
+	    if (!addVertex(v2)) {
+		vB = vertices.get(vertices.indexOf(v2));
+	    }
+	    return (vA.connect(vB) && vB.connect(vA));
 	}
 }

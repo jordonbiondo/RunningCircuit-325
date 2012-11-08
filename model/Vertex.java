@@ -7,7 +7,8 @@ public class Vertex {
     
     public GeoPoint point;
     public int value;
-    ArrayList<Vertex> connections;
+
+    public ArrayList<Vertex> connections;
     
     public Vertex(GeoPoint p) {
 	point = p;
@@ -17,6 +18,8 @@ public class Vertex {
     
     public Vertex(int la, int lo) {
 	point = new GeoPoint(la, lo);
+	value = 0;
+	connections = new ArrayList<Vertex>();
     }
     
     /**
