@@ -6,8 +6,8 @@ import java.util.*;
 public class Vertex {
     
     public GeoPoint point;
-    public int value;
-
+    public double value;
+    public boolean scanned;
     public ArrayList<Vertex> connections;
     
     public Vertex(GeoPoint p) {
@@ -21,7 +21,18 @@ public class Vertex {
 	value = 0;
 	connections = new ArrayList<Vertex>();
     }
+
+    public void setValue(double val) {
+	value = val;
+    }
     
+    public void setScanned() {
+	scanned = true;
+    }
+
+    public void resetScanned() {
+	scanned = false;
+    }
     /**
      * Connect vertex to another vertex
      */
