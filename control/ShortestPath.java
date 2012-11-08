@@ -18,8 +18,10 @@ public class ShortestPath {
 	for (Vertex v : vertices) {
 	    v.setValue(0);
 	}
-
-	/* why set to null?
+	//set to null because there might be a path that has the weight zero, 
+	//so i figured we could just use null as our infinity in the algorithm - jake
+	
+	/* why set to null? 
 	for(int i=0;i<vertices.size;i++){
 	    Vertex temp =vertices.get(i);
 	    temp.setValue=null;
@@ -41,8 +43,8 @@ public class ShortestPath {
 	}
 	/*
 	for(int i=0;i<edges.size();i++){
-	    // did you mean to check scanned on an edge here? should be v?
-	    if(edges.get(i).getVertex1()==v && !edges.get(i).scanned){
+	    // did you mean to check scanned on an edge here? should be v? Yeah, lol -jake
+	    if(edges.get(i).getVertex1()==v && !edges.get(i).getVertex1().scanned){
 		adjacentEdge.add(edges.get(i));
 	    }
 	}
@@ -53,6 +55,7 @@ public class ShortestPath {
     public void scan(Vertex a, Vertex b){
 	getAdjacent(at);
 	for (Edge edge : adjacentEdge) {
+		//Whats up with the logic here, are we not scanning the ajacent edges? - Jake
 	    if (edge.getVertex2().value < (edge.getVertex2().value + edge.getWeight())) {
 		edge.getVertex2().setValue(edge.getVertex2().value + edge.getWeight());
 	    }
@@ -61,7 +64,7 @@ public class ShortestPath {
 	/*
 	for(int i=0;i<adjacentEdge.size();i++){
 	    if(adjacentEdge.get(i).getVertex2().value<(adjacentEdge.get(i).getVertex2().value + adjacentEdge.get(i).getWeight()))
-		adjacentEdge.get(i).getVertex2().setValue(adjacentEdge.get(i).getVertex2().getvalue() + adjacentEdge.get(i).getWeight());
+			adjacentEdge.get(i).getVertex2().setValue(adjacentEdge.get(i).getVertex2().getvalue() + adjacentEdge.get(i).getWeight());
 	}
 	*/
 
