@@ -1,32 +1,24 @@
-/***
-*circuitFetcher
-input: takes a graph and a vertex contains in the graph
-Runs jordan algorithm
-Returns: a List of of circuits
-*/
-
-/**
-Circuit
-Object that has a list of vertices
-*/
-
-/**
-weightFind (is inside of the the curcuit)
-input: a circuit
-Returns: The total weight of a circuit
-*/
 
 
 /**
-shortestPath
-Input: Two vertices
-Return: shortest path
+	Priority: HIGH
+
+	shortestPath
+	Input: Two vertices
+	Return: shortest path
 **/
 
 /**
-Build UI Maybe
+	Priority: LOW
+
+	Build UI Maybe
 **/
 
 /**
+	Priority: HIGH
 
+	Get Data	
+	Write Test Files
 **/
+
+
