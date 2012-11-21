@@ -54,7 +54,7 @@ public class Vertex {
     
     @Override
     public String toString() {
-	return "" + value + ": " + point.lati + ", " + point.longi;
+	return "(" + value + ": " + point.lat + ", " + point.lon + ")";
     }
     
 

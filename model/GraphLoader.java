@@ -25,7 +25,7 @@ public class GraphLoader {
 		lineCount++;
 		String nextL = scanner.nextLine();
 		// can comment lines in graph files with a #
-		if (nextL.charAt(0) != '#') {
+		if (nextL.length() != 0 &&nextL.charAt(0) != '#') {
 		    Vertex[] vPair = loadEdgeLine(nextL);
 		    if (vPair.length != 2)
 			throw new Exception("Bad file line: " + lineCount);

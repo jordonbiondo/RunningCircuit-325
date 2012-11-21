@@ -21,6 +21,22 @@ public class Tester {
 		    System.out.println("    "+c);
 		}
 	    }
+	    pln("------------------------");	    
+
+	    
+	    ArrayList<Circuit> circuits = Engine.getCircuits(g, g.vertices.get(0));
+	    
+	    //	    DistanceInterface dCalc= new SimpleDistance();
+	    DistanceInterface dCalc= new HaversineDistance();
+	    for (Circuit c : circuits) {
+		pln(c.getWeight(dCalc)+": "+ c);
+	    }
+	    pln("\n------------------------\n");
+	    for (Circuit c : Engine.bestCircuits(circuits, 7, dCalc)) {
+		pln(c.getWeight(dCalc)+": "+ c);
+	    }
+
+	    
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
@@ -37,6 +53,9 @@ public class Tester {
 	return null;
     }
 
+    public static void pln(Object arg) {
+	System.out.println(arg);
+    }
     
 
     

@@ -2,21 +2,21 @@ package model;
 
 public class GeoPoint {
     /** Lattitude */
-    public int lati;
+    public int lat;
     
     /** Longitude */
-    public int longi;
+    public int lon;
     
     /** New GeoPoint given a lat and long */
     public GeoPoint(int la, int lo) {
-	lati = la;
-	longi = lo;
+	lat = la;
+	lon = lo;
     }
     
     @Override
 	public boolean equals(Object a) {
 	if (a instanceof GeoPoint) {
-	    return (lati == ((GeoPoint) a).lati && longi == ((GeoPoint) a).longi);
+	    return (lat == ((GeoPoint) a).lat && lon == ((GeoPoint) a).lon);
 	}
 	return false;
     }
