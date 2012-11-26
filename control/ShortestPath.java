@@ -17,7 +17,7 @@ public class ShortestPath {
 	too=b;
 
 	for (Vertex v : vertices) {
-	    v.setValue(0);
+	    v.setValue(null);
 	}
 	while(!too.scanned()){
 		scan(at,too);  
@@ -61,8 +61,8 @@ public class ShortestPath {
     public void scan(Vertex a, Vertex b){
 	getAdjacent(a);
 	for (Edge tEdge : adjacentEdge) {
-	    if (tEdge.getVertex2().value < (tEdge.getVertex1().value + tEdge.getEdge())){
-		tEdge.getVertex2().setValue(tEdge.getVertex1().value + tEdge.getEdge())
+	    if (tEdge.getVertex2().value < (tEdge.getVertex1().value + tEdge.getWeight())||tEdge.getVertex2().value=null){
+		tEdge.getVertex2().setValue(tEdge.getVertex1().value + tEdge.getWeight())
 	    }
 	}
 
