@@ -8,14 +8,29 @@ public class Vertex {
     public GeoPoint point;
     public double value;
     public boolean scanned;
+	public boolean inList;
     public ArrayList<Vertex> connections;
+	public ArrayList<Edges> pathTraveled;
     
+	
     public Vertex(GeoPoint p) {
 	point = p;
 	value = 0;
 	connections = new ArrayList<Vertex>();
     }
-    
+	
+	public ArrayList<Edges> getPathTraveled(){
+	return pathTraveled;
+	}
+	
+	public setList(){
+	inList == true;
+	}
+	
+	public rmList(){
+	inList == false;
+	}
+ 
     public Vertex(int la, int lo) {
 	point = new GeoPoint(la, lo);
 	value = 0;
@@ -44,6 +59,7 @@ public class Vertex {
 	return false;
     }
     
+	
     @Override
     public boolean equals(Object a) {
 	if (a instanceof Vertex) {
