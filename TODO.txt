@@ -1,15 +1,19 @@
-
-
+	
 /**
 	Priority: HIGH
 
-	shortestPath
+	Comment: shortestPath should be complete now, but i still 
+	need to test it to make sure that it actually runs	
+	
+	Test shortestPath
 	Input: Two vertices
-	Return: shortest path
+	Return: shortest path (in relation to edges)
 **/
 
 /**
 	Priority: LOW
+	
+	Comment: Does anyone want to do this, or a bare bones UI	
 
 	Build UI Maybe
 **/
@@ -21,4 +25,8 @@
 	Write Test Files
 **/
 
+/**
+	Priority: HIGH
 
+	Figure Out Plan For Next Week
+**/
