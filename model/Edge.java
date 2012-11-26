@@ -18,10 +18,6 @@ public class Edge {
     }
     
     
-    public double calcWeight() {
-	// TODO
-	return 0;
-    }
     
     public Vertex getVertex2() {
 	return vertex2;
@@ -32,7 +28,9 @@ public class Edge {
     }
     
     public double getWeight() {
-	return weight;
+	// Only supports haversine currently 
+	HaversineDistance distCalc = new HaversineDistance();
+	return distCalc.distance(vertex1, vertex2);
     }
     
     @Override
