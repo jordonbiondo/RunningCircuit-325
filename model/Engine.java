@@ -13,7 +13,7 @@ public class Engine {
     /**
      * Simple circuit finder algorithm
      * 
-     * @return a list of simple circuit that contained in g that contains v
+     * @return a list of simple circuits that contained in g that contains v
      */
     public static ArrayList<Circuit> getCircuits(Graph g, Vertex v)
 	throws IllegalArgumentException {
@@ -43,8 +43,7 @@ public class Engine {
 		    traverse(root, c); 
 		} else {
 		    if (root.equals(c)) {
-			makeCircuit(); 
-
+			allCircuits.add(new Circuit(vStack));
 		    }
 		}
 	    } else {
@@ -62,6 +61,7 @@ public class Engine {
     /**
      * Make a circuit of the the current vStack and all it to the list
      */
+    /*
     private static void makeCircuit(){ 
 	Circuit circuit = new Circuit();
 	for (int i = 0; i < vStack.size(); i++) {
@@ -69,6 +69,8 @@ public class Engine {
 	}
 	allCircuits.add(circuit);
     }
+    */
+    
 
 
     

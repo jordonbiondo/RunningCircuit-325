@@ -23,6 +23,13 @@ public class Circuit {
     public Circuit() {
 	vertices = new ArrayList<Vertex>();
     }
+
+    public Circuit(ArrayList<Vertex> vStack) {
+	vertices = new ArrayList<Vertex>();
+	for (int i = 0; i < vStack.size(); i++) {
+	    addVertex(vStack.get(i));
+	}
+    }
     
     /**
      * addes vertex to the list, it will be conisdered connected to the last

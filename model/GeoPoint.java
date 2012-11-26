@@ -12,6 +12,18 @@ public class GeoPoint {
 	lat = la;
 	lon = lo;
     }
+
+    /** return decimal of lat */
+    public double realLat() {
+	double dlat = (double) lat;
+	return (dlat / 1000000);
+    }
+    
+    /** return decimal of long */
+    public double realLong() {
+	double dlong = (double) lon;
+	return (dlong / 1000000);
+    }
     
     @Override
 	public boolean equals(Object a) {
