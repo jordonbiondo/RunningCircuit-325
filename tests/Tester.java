@@ -40,6 +40,13 @@ public class Tester {
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
+
+	Edge edge = new Edge(new Vertex(4285898, -85847180),
+			     new Vertex(4285884, -85842510));
+
+	System.out.println(edge.getWeight());
+
+
 	
     }
 
