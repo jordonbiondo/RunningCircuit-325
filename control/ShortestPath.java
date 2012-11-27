@@ -1,5 +1,6 @@
 package control;
 import java.util.*;
+
 import model.*;
 
 public class ShortestPath {
@@ -10,16 +11,16 @@ public class ShortestPath {
     public Vertex too;
 	public Edge smallest;
     
-    public List<Edges> ShortestPath(Vertex a, Vertex b, Graph graph){
+    public ArrayList<Edge> ShortestPath(Vertex a, Vertex b, Graph graph){
 	ArrayList<Edge> edges = graph.edges;
 	ArrayList<Vertex> vertices = graph.vertices;
 	at=a;
 	too=b;
 
 	for (Vertex v : vertices) {
-	    v.setValue(null);
+	    v.setValue((Double) null);
 	}
-	while(!too.scanned()){
+	while(!too.getScanned()){
 		scan(at,too);  
 		find();
 	}	
@@ -27,22 +28,22 @@ public class ShortestPath {
     }
     
 	public void find(){
-	for{Vertex vrt: vertices) {
+	for(Vertex vrt: vertices) {
 		if(vrt.scanned){
-			adjacentEdge(vrt);
+			getAdjacent(vrt);
 			for(Edge aE: adjacentEdge){
 				if(smallest==null)
-					smallest==aE;
-				if(aE.getVertex2.getValue()<smallest.getVertex2.getValue())
-					smallest==aE;
+					smallest=aE;
+				if(aE.getVertex2().getValue()<smallest.getVertex2().getValue())
+					smallest=aE;
 			}
-			smallest.getVertex2.setScanned();
-			at = smallest.getVertex2;
-			for(Edge e: smallest.getVertex1.getPathTraveled()){
-				smallest.getVertex2.getPathTraveled().add(e)
+			smallest.getVertex2().setScanned();
+			at = smallest.getVertex2();
+			for(Edge e: smallest.getVertex1().getPathTraveled()){
+				smallest.getVertex2().getPathTraveled().add(e);
 			}
-			smallest.getVertex2.getPathTraveled().add(smallest);
-			smallest==null;
+			smallest.getVertex2().getPathTraveled().add(smallest);
+			smallest=null;
 		}
 	}
 	}
@@ -50,7 +51,8 @@ public class ShortestPath {
     public void getAdjacent(Vertex v){
 	adjacentEdge.clear();
 	for (Edge e : edges) {
-	    if (e.getVertex1() == v && v.scanned && e.getVertex2() == v2 && !v2.scanned) {
+		Vertex v2=e.getVertex2();
+	    if (e.getVertex1() == v && v.scanned && !v2.scanned) {
 		adjacentEdge.add(e);
 		}
 	}
@@ -61,8 +63,8 @@ public class ShortestPath {
     public void scan(Vertex a, Vertex b){
 	getAdjacent(a);
 	for (Edge tEdge : adjacentEdge) {
-	    if (tEdge.getVertex2().value < (tEdge.getVertex1().value + tEdge.getWeight())||tEdge.getVertex2().value=null){
-		tEdge.getVertex2().setValue(tEdge.getVertex1().value + tEdge.getWeight())
+	    if (tEdge.getVertex2().value < (tEdge.getVertex1().value + tEdge.getWeight())||(Double)tEdge.getVertex2().value==(Double)null){
+		tEdge.getVertex2().setValue(tEdge.getVertex1().value + tEdge.getWeight());
 	    }
 	}
 

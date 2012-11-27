@@ -9,8 +9,7 @@ public class Edge {
     private Vertex vertex1;
     
     private Vertex vertex2;
-    
-    private double weight;
+
     
     public Edge(Vertex v1, Vertex v2) {
 	vertex1 = v1;

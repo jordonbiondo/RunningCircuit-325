@@ -2,6 +2,7 @@
 package model;
 
 import java.util.*;
+import model.*;
 
 public class Vertex {
     
@@ -10,7 +11,7 @@ public class Vertex {
     public boolean scanned;
 	public boolean inList;
     public ArrayList<Vertex> connections;
-	public ArrayList<Edges> pathTraveled;
+	public ArrayList<Edge> pathTraveled;
     
 	
     public Vertex(GeoPoint p) {
@@ -19,16 +20,16 @@ public class Vertex {
 	connections = new ArrayList<Vertex>();
     }
 	
-	public ArrayList<Edges> getPathTraveled(){
+	public ArrayList<Edge> getPathTraveled(){
 	return pathTraveled;
 	}
 	
-	public setList(){
-	inList == true;
+	public void setList(){
+	inList = true;
 	}
 	
-	public rmList(){
-	inList == false;
+	public void rmList(){
+	inList = false;
 	}
  
     public Vertex(int la, int lo) {
@@ -48,6 +49,12 @@ public class Vertex {
     public void resetScanned() {
 	scanned = false;
     }
+    
+    public boolean getScanned(){
+		return scanned;
+    }
+  
+    
     /**
      * Connect vertex to another vertex
      */
@@ -72,6 +79,10 @@ public class Vertex {
     public String toString() {
 	return "(" + value + ": " + point.lat + ", " + point.lon + ")";
     }
+
+	public double getValue() {
+		return value;
+	}
     
 
 }
