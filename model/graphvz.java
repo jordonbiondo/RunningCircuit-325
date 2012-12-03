@@ -13,7 +13,7 @@ public class GraphvizMake {
   }
   }
   public void addEdge(String x, String y) {
-	out.write("x--y;");
+	out.write(x&"--"&y&";");
 	out.write("\n");
   }
   public void end(){
