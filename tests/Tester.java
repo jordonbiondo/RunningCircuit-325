@@ -26,14 +26,21 @@ public class Tester {
 	    
 	    ArrayList<Circuit> circuits = Engine.getCircuits(g, g.vertices.get(0));
 	    
-	    //	    DistanceInterface dCalc= new SimpleDistance();
-	    DistanceInterface dCalc= new HaversineDistance();
+	    GraphMaker gm = new GraphMaker();
+	    gm.makeGraph("myGraph", g);
+
+
+	    DistanceInterface dCalc= new SimpleDistance();
+	    //DistanceInterface dCalc= new HaversineDistance();
+	    i = 0;
 	    for (Circuit c : circuits) {
 		pln(c.getWeight(dCalc)+": "+ c);
 	    }
 	    pln("\n------------------------\n");
 	    for (Circuit c : Engine.bestCircuits(circuits, 7, dCalc)) {
 		pln(c.getWeight(dCalc)+": "+ c);
+		gm.makeGraph("circuit"+i, c.toGraph());
+		i++;
 	    }
 
 	    
@@ -46,19 +53,9 @@ public class Tester {
 
 	System.out.println(edge.getWeight());
 
-
-	
     }
 
     
-    public static List<Vertex> shortestPath(Graph g, Vertex start, Vertex end) {		
-	PriorityQueue<Vertex> x = new PriorityQueue<Vertex>();
-	for (Vertex v : start.connections) {
-	    
-	}
-
-	return null;
-    }
 
     public static void pln(Object arg) {
 	System.out.println(arg);

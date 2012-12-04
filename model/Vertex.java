@@ -37,7 +37,9 @@ public class Vertex {
 	value = 0;
 	connections = new ArrayList<Vertex>();
     }
-
+    public String uniqueName() {
+	return "" + point.realLat() + "," + point.realLong();
+    }
     public void setValue(double val) {
 	value = val;
     }

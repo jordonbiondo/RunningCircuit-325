@@ -76,6 +76,15 @@ public class Circuit {
 	return dist;
     }
 
+    public Graph toGraph() {
+	Graph g = new Graph();
+	for (int i = 0; i < vertices.size()-1; i++) {
+	    g.addConnection(vertices.get(i), vertices.get(i+1));
+	}
+	g.addConnection(vertices.get(0), vertices.get(vertices.size()-1));
+	return g;
+    }
+
     @Override
     public String toString() {
 	String val = "";
