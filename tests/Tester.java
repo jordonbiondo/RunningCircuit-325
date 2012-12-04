@@ -26,7 +26,7 @@ public class Tester {
 
 	    Graph out = GraphLoader.loadGraph(args[0]):
 		
-		ArrayList<Edge> shortEdge = out.ShortestPath(Vertex a, Vertex b);
+		ArrayList<Edge> shortEdge = out.ShortestPath(out.getVertexList().get(0), out.getVertexList().get(out.getVertexList().length()-1));
 		out.clearConnection();
 		for (Edge E: shortEdge){
 			out.addConnection(E.getVertex1(),E.getVertex2());

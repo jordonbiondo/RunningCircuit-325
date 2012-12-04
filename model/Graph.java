@@ -29,6 +29,9 @@ public class Graph {
 	}
 	return false;
     }
+	public ArrayList<Vertex> getVertexList(){
+		return vertices;
+	}
  
 	public void clearConnection(){
 		edges.clear();
