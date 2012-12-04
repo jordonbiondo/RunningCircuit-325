@@ -1,4 +1,4 @@
-package control;
+package model;
 import java.util.*;
 
 import model.*;
@@ -11,7 +11,7 @@ public class ShortestPath {
     public Vertex too;
 	public Edge smallest;
     
-    public ArrayList<Edge> ShortestPath(Vertex a, Vertex b, Graph graph){
+    public ArrayList<Edge> shortestPath(Vertex a, Vertex b, Graph graph){
 	ArrayList<Edge> edges = graph.edges;
 	ArrayList<Vertex> vertices = graph.vertices;
 	at=a;

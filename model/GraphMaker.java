@@ -21,6 +21,26 @@ public class GraphMaker{
 	}
     }
 
+    public void makeCircuitDiagram(String file, Graph g, Circuit c) {
+	try {
+	    GraphStart(file);
+	    out.write("subgraph cluster_1 { node [style=filled]; label = \""+ "Circuit: " + c.getWeight(new HaversineDistance())+" miles" +"\";color=blue");
+	    for (Edge e : c.toGraph().edges) {
+		out.write("\""+e.getVertex1().coordName()+"\""+";"+
+			  "\""+e.getVertex2().coordName()+"\""+";");
+		out.write("\n");
+	    }
+	    out.write("}");
+	    for (Edge e : g.edges) {
+		addEdge(e.getVertex1().coordName(), e.getVertex2().coordName());
+	    }
+	    end();
+	} catch (Exception ex) {
+	    ex.printStackTrace();
+	}
+	
+    }
+
     public void makeGraph(String file, Graph g) {
 	makeGraph(file, g.edges);
     }
@@ -39,7 +59,7 @@ public class GraphMaker{
 	}
 	return true;
     }
-    
+
     
     private void addEdge(String x, String y) throws IOException {
 	out.write("\"" + x + "\"");
