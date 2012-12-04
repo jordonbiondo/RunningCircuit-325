@@ -1,7 +1,7 @@
 package model;
 
 import java.io.*;
-
+import java.util.*;
 public class GraphMaker{
     
     private BufferedWriter out;
@@ -9,22 +9,23 @@ public class GraphMaker{
     private String name;
 
     
-    public void makeGraph(String file, Graph graph) {
+    public void makeGraph(String file, List<Edge> edges) {
 	try {
 	GraphStart(file);
-	for (Edge g : graph.edges) {
-	    //addEdge(g.getVertex1().uniqueName(), g.getVertex2().uniqueName());
-	    addEdge(g.getVertex1().getValue()+"", g.getVertex2().getValue()+"");
+	for (Edge e : edges) {
+	    addEdge(e.getVertex1().coordName(), e.getVertex2().coordName());
 	}
-
-	    end();
-	} catch (Exception e) {
-	    e.printStackTrace();
+	end();
+	} catch (Exception ex) {
+	    ex.printStackTrace();
 	}
-	
     }
+
+    public void makeGraph(String file, Graph g) {
+	makeGraph(file, g.edges);
+    }
+
     private boolean GraphStart(String x) {
-	
 	try{
 	    // Create file 
 	    name = x +".dot";
