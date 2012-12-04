@@ -23,16 +23,24 @@ public class Tester {
 	    }
 	    pln("------------------------");	    
 
-	    
+	    Graph out = GraphLoader.loadGraph(args[0]):
+		
+		ArrayList<Edge> shortEdge = out.ShortestPath(Vertex a, Vertex b);
+		out.clearConnection();
+		for (Edge E: shortEdge){
+			out.addConnection(E.getVertex1(),E.getVertex2());
+		}
+
 	    ArrayList<Circuit> circuits = Engine.getCircuits(g, g.vertices.get(0));
-	    
 	    GraphMaker gm = new GraphMaker();
 	    gm.makeGraph("myGraph", g);
-
+		
 
 	    DistanceInterface dCalc= new SimpleDistance();
 	    //DistanceInterface dCalc= new HaversineDistance();
 	    i = 0;
+		gm.makeGraph("ShortestDistance",out):
+		
 	    for (Circuit c : circuits) {
 		pln(c.getWeight(dCalc)+": "+ c);
 	    }
@@ -54,8 +62,6 @@ public class Tester {
 	System.out.println(edge.getWeight());
 
     }
-
-    
 
     public static void pln(Object arg) {
 	System.out.println(arg);
