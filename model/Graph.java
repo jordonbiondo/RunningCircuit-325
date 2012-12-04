@@ -29,7 +29,11 @@ public class Graph {
 	}
 	return false;
     }
-    
+ 
+	public void clearConnection(){
+		edges.clear();
+	}
+	
     public boolean addConnection(Vertex v1, Vertex v2) {
 	Vertex vA = v1;
 	Vertex vB = v2;
