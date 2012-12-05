@@ -29,20 +29,11 @@ public class Tester {
 	    }
 	    pln("------------------------");	    
 	    
-	    Graph out = GraphLoader.loadGraph(args[0]);
-	    
-	    ShortestPath sp = new ShortestPath();
-	    ArrayList<Edge> shortEdge = sp.shortestPath(out.getVertexList().get(0), out.getVertexList().get(out.getVertexList().size()-1), out);
-	    out.clearConnection();
-	    for (Edge E: shortEdge){
-		out.addConnection(E.getVertex1(),E.getVertex2());
-	    }
-	    
+
 	    ArrayList<Circuit> circuits = Engine.getCircuits(g, g.vertices.get(0));
 	    
 	    
 	    GraphMaker gm = new GraphMaker();
-	    gm.makeGraph("shortDistGraph", out);
 	    gm.makeGraph("myGraph", g);
 	    gm.makeGraph("myGraph2", g.edges);
 	    
