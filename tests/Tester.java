@@ -42,14 +42,14 @@ public class Tester {
 	    //DistanceInterface dCalc= new HaversineDistance();
 	    i = 0;
 	    for (Circuit c : circuits) {
-		//pln(c.getWeight(dCalc)+": "+ c);
+		pln(c.getWeight(dCalc)+": "+ c);
 	    }
 	    pln("\n------------------------\n");
 	    for (Circuit c : Engine.bestCircuits(circuits, .5, dCalc)) {
 		pln(c.getWeight(dCalc));
 		gm.makeCircuitDiagram("circuit", g, c);
 		break;
-		//pln(c.getWeight(dCalc)+": "+ c);
+		pln(c.getWeight(dCalc)+": "+ c);
 	    }
 	    
 	} catch (Exception e) {
